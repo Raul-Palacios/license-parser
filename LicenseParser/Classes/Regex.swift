@@ -11,7 +11,7 @@ class Regex{
       guard firstMatch.numberOfRanges > 1 else { return nil }
       let matchedGroup = (data as NSString).substring(with: firstMatch.rangeAt(1))
       guard !matchedGroup.isEmpty else { return nil }
-      return matchedGroup.trimmingCharacters(in: NSCharacterSet.whitespaceAndNewlineCharacterSet)
+      return matchedGroup.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
     } catch _ {
       return nil
     }
