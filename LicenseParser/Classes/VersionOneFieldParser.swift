@@ -103,7 +103,8 @@ class VersionOneFieldParser: FieldParser{
   private func parseDriverLicenseName(key: String) -> String?{
     guard let driverLicenseName = parseString(key: "driverLicenseName") else { return nil }
 
-    let namePieces = driverLicenseName.characters.split{ $0 == "," }.map(String.init)
+    //let namePieces = driverLicenseName.characters.split{ $0 == "," }.map(String.init)
+    let namePieces = driverLicenseName.split{ $0 == "," }.map(String.init)
 
     switch key {
     case "lastName":

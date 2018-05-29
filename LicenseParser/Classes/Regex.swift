@@ -9,7 +9,9 @@ class Regex{
       guard matches.count > 0 else { return nil }
       guard let firstMatch = matches.first else { return nil }
       guard firstMatch.numberOfRanges > 1 else { return nil }
-      let matchedGroup = (data as NSString).substring(with: firstMatch.rangeAt(1))
+      //let matchedGroup = (data as NSString).substring(with: firstMatch.rangeAt(1))
+      let matchedGroup = (data as NSString).substring(with: firstMatch.range(at: 1))
+
       guard !matchedGroup.isEmpty else { return nil }
       return matchedGroup.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
     } catch _ {
